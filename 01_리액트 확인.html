@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리액트 확인</title>
+
+  <!-- 바벨 cdn -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- 리엑트 cdn -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <link rel="stylesheet" href="./01_리액트 확인.css">
+  <style>
+    .react-style {
+      font-weight: bold;
+      color: burlywood;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // 함수 형태로 작성
+    function MyApp() {
+      const name = 'react';
+      const count = 1;
+      const content = undefined;
+      const style = {
+        backgroundColor : "black",
+        color : "aqua"
+      }
+
+      // return을 통해서 HTML 화면 출력
+      // 태그를 여러 개 사용할 때 부모 태그로 감싸서 사용
+      // 태그는 꼭 닫혀있어야 한다. <br />
+      // {}를 이용하여 변수, 자바스크립트를 사용할 수 있다.
+      return (
+        <div>
+          <h1>Hello, {name} world! hi!</h1>
+          <p>{count+1}안녕하세요</p>
+
+          {
+            // {}안에서 조건문 >> 삼항 연산자 사용
+            name == 'react' ? (
+              <div>
+                <h1>리액트입니다</h1>
+                <p>name의 값 : {name}</p>
+              </div>
+            ) : (
+              <div>
+                <h1>리액트가 아닙니다</h1>
+                <p>잘못된 name의 값입니다</p>
+              </div>
+            )
+          }
+
+          {
+            // JSX and(&&)연산자 : 참일 때 출력
+            name == 'react' && (<h1>리액트입니다</h1>)
+          }
+          {
+            // JSX or(||)연산자 : 거짓(또는 undefined)일 때 출력
+            // JSX는 undefined를 화면에 출력하면 에러
+            // 따라서 undefined 값이 들어가 있는 값을 대체하기 위해 사용하는 편
+            content || <h1>값이 undefined</h1>
+          }
+
+          <p style={style}>인라인 스타일이 적용된 모습입니다</p>
+
+          {/* class가 아닌 className으로 css를 적용할 수 있다. */}
+          <p className="react-style">CSS 파일로 작성한 클래스 적용</p>
+          <p className="react-css">외부 CSS 파일로 작성</p>
+        </div>
+      );
+    }
+
+    // html의 root요소를 찾아서 그 곳에 가상돔을 렌더한다.
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<MyApp />);
+  </script>
+</body>
+</html>
