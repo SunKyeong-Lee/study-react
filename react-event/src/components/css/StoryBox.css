@@ -1,0 +1,17 @@
+.story-box {
+  background-color: rgb(226, 226, 226);
+  width: 90%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.story-title {
+  background-color: rgb(39, 42, 49);
+  color: whitesmoke;
+  padding: 10px;
+}
+
+.story-descript {
+  border: 1px solid grey;
+  margin: 10px 0;
+}

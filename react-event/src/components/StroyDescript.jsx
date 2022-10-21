@@ -2,7 +2,7 @@
 // 컨텐츠 본문
 
 import { Component } from "react";
-import './css/StoryDescript.css';  // css 연결
+import './css/StoryBox.css';  // css 연결
 
 class StoryDescript extends Component {
   constructor(props) {
