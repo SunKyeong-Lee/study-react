@@ -1,8 +1,8 @@
 // 클래스형 컴포넌트
 
 import { Component } from "react";
-import StoryTitle from "./StoryTitle";        // 제목 컴포넌트
-import StoryDescript from "./StroyDescript";  // 본문 컴포넌트
+import StoryTitle from "./StoryTitle";        // 제목 컴포넌트 연결
+import StoryDescript from "./StroyDescript";  // 본문 컴포넌트 연결
 import './css/StoryBox.css';                  // css 연결
 
 class StoryBox extends Component {

@@ -2,7 +2,6 @@
 // 컨텐츠 제목에 오늘 날짜(월.일)를 추가
 
 import { Component } from "react";
-import './css/StoryBox.css'; // css 연결
 
 class StoryTitle extends Component {
   constructor(props) {
