@@ -1,6 +1,7 @@
 // 함수형 컴포넌트
 
 import { useReducer } from "react";
+import MemoComp from "./MemoComp";
 import ReducerCountComp from "./ReducerCountComp";
 
 // 현재 상태(state)와 액션 객체(action)를 파라미터로 받아와서 
@@ -23,7 +24,7 @@ function reducer(state, action) {
 
 const initialState = {
   count: 0,
-  input: ""
+  input: "여기에 입력값이 나타납니다"
 }
 
 const ReducerComp = () => {
@@ -51,13 +52,17 @@ const ReducerComp = () => {
         MemoComp에서 작성한 글이 ReducerComp에서 수정되어 나올 수 있게 하기
       */}
       <h1>{state.input}</h1>
+      {/** 먼저 ReducerComp에서 실행해보기, e객체의 값을 어떻게 가져갈지 생각하기 */}
       <input 
         type="text" 
-        onChange={ (e) => { dispatch({
+        placeholder="부모 컴포넌트에서의 input"
+        // setState(e.target.value) >> dispatch에서 쓸수있도록
+        onChange={(e) => { dispatch({
           type: 'changeInput',
           payload: e.target.value
-        }) } }
+        }) }}
       />
+      <MemoComp dispatch={dispatch} />
     </div>
   );
 }
