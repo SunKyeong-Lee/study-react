@@ -8,7 +8,7 @@ class LifeCycleComp extends Component {
     super(props);
     this.state = {
       title: '라이프 사이클',
-      time: new Date()
+      time: new Date()  // 시간 출력하기위애 stat에 date 값을 저장
     }
   }
 
@@ -20,6 +20,7 @@ class LifeCycleComp extends Component {
   componentDidMount() {
     console.log('마운트하였습니다');
     // 1초마다 함수를 실행하는 타이머함수 실행
+    // > 시작하자마자 1초마다 값을 할당해주기 위해 componentDidMount에 작성
     this.id = setInterval(
       () => {this.setState( {time: new Date()} )},
       1000
@@ -31,6 +32,7 @@ class LifeCycleComp extends Component {
   }
   componentWillUnmount() {
     console.log('언마운트하였습니다');
+    clearInterval(this.id);
   }
 
   render() { 

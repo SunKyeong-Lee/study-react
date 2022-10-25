@@ -1,0 +1,9 @@
+.on {
+  color: black;
+  transition: color 1s;
+}
+
+.off {
+  color: lightgrey;
+  transition: color 1s;
+}
