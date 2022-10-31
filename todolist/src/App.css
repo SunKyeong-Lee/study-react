@@ -1,0 +1,16 @@
+body {
+  background-color: lightslategrey;
+}
+
+.App {
+  width: 70%;
+  min-height: 300px;
+  border-radius: 20px;
+  margin: auto;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+hr {
+  margin: 10px;
+}
